@@ -24,6 +24,7 @@ const ProfileScreen = ({navigation}) => {
      </View>
 
      <View style = {styles.stories}>
+     <ScrollView horizontal={true}>
      <TouchableHighlight onPress={() => navigation.navigate('Story1')}>
       <View> 
         <Image source = {story1} style = {styles.storypic} />
@@ -42,12 +43,13 @@ const ProfileScreen = ({navigation}) => {
         <Text style = {styles.storytext}>Новости мира финансов</Text>
       </View>
       </TouchableHighlight>
+      </ScrollView>
      </View>
      <View style = {styles.main}>
       <Text style = {styles.maintext}>Анализ финансов пока недоступен: недостаточно данных</Text>
      </View>
 
-     <Pressable style = {styles.button}>
+     <Pressable style = {styles.buttonnon}>
        <Text style = {styles.buttontext} 
               onPress={() => navigation.navigate('Third')}
               >Добавить цель</Text>

@@ -1,111 +1,147 @@
-import 'react-native-gesture-handler';
+import React from "react";
+import { View, Text, StyleSheet, Icon, Image, Pressable, TouchableHighlight, ScrollView } from "react-native";
+import { AntDesign } from '@expo/vector-icons';
+import story1 from './assets/storiesmoneystorage.jpeg';
+import story2 from './assets/storiesinvestigation.jpeg';
+import story3 from './assets/storiesnews.jpeg';
 
-import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import First from './screens/first';
-import Second from './screens/second';
-import Third from './screens/third';
-import Story1 from './screens/story1';
-import Story2 from './screens/story2';
-import Story3 from './screens/story3';
-
-const Stack = createStackNavigator();
-
-const App = () => {
+const ProfileScreen = ({navigation}) => {
+    
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="First">
-        <Stack.Screen 
-          name="First"
-          component={First}
-          options={{
-            title: 'Регистрация', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Second"
-          component={Second}
-          options={{
-            title: 'Категории', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Third"
-          component={Third}
-          options={{
-            title: 'Добавление цели', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        
-        <Stack.Screen
-          name="Story1"
-          component={Story1}
-          options={{
-            title: 'Story1', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Story2"
-          component={Story2}
-          options={{
-            title: 'Story2', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Story3"
-          component={Story3}
-          options={{
-            title: 'Story3', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.app}>
+    <View style = {styles.statusbar}>
+     <AntDesign name="setting" 
+                size={32} 
+                color="#D500F9"
+                onPress={() => alert('hello')}/>
+     <Text style = {styles.statusbar}> Name </Text>
+
+     <AntDesign name="plus" 
+                size={32} 
+                color="#D500F9"
+                onPress={() => navigation.navigate('Second')}/>
+     </View>
+
+     <View style = {styles.stories}>
+     <ScrollView horizontal={true}>
+     <TouchableHighlight onPress={() => navigation.navigate('Story1')}>
+      <View> 
+        <Image source = {story1} style = {styles.storypic} />
+        <Text style = {styles.storytext}>Узнайте о возможностях сбережений</Text>
+      </View>
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => navigation.navigate('Story2')}>
+      <View> 
+        <Image source = {story2} style = {styles.storypic}/>
+        <Text style = {styles.storytext}>Как начать инвестировать?</Text>
+      </View>
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => navigation.navigate('Story3')}>
+      <View> 
+        <Image source = {story3} style = {styles.storypic}/>
+        <Text style = {styles.storytext}>Новости мира финансов</Text>
+      </View>
+      </TouchableHighlight>
+      </ScrollView>
+     </View>
+     <View style = {styles.main}>
+      <Text style = {styles.maintext}>Анализ финансов пока недоступен: недостаточно данных</Text>
+     </View>
+
+     <Pressable style = {styles.buttonnon}>
+       <Text style = {styles.buttontext} 
+              onPress={() => navigation.navigate('Third')}
+              >Добавить цель</Text>
+     </Pressable>
+
+     <Pressable style = {styles.buttonnon}>
+       <Text style = {styles.buttontext}>Добавить программу планирования бюджета</Text>
+     </Pressable>
+
+     <Pressable style = {styles.buttonnon}>
+       <Text style = {styles.buttontext}>Добавить карту</Text>
+     </Pressable>
+    </View>
   );
 };
 
-export default App;
+const styles = StyleSheet.create({
+  app:{
+    flex: 1,
+    paddingTop: 60,
+   // justifyContent: 'flex-start'
+    //flexDirection: 'row',
+    //paddingLeft: 20
+  },
+  statusbar:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    fontFamily: 'Roboto',
+    fontWeight: 'Medium',    
+    fontSize: 25
+    },
+  stories:{
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    flexDirection: 'row'
+  },
+  storypic:{
+    width: 135, 
+    height: 240,
+    borderRadius: 10,
+    marginRight: 10
+  },
+  storytext:{
+    position: 'absolute',
+    width: 135, 
+    height: 240,
+    top: 7,
+    fontFamily: 'Roboto',
+    fontSize: 15,
+    textAlign: 'center',
+    color: 'white',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 1,
+    textShadowColor: 'black'
+  },
+  main:{
+    paddingHorizontal: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 20
+  },
+  maintext:{
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    color: '#878787',
+    //alignItems: 'center',
+  },
+  button:{
+    bottom: 0,
+    backgroundColor: '#1A73E9',
+    paddingVertical: 10,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    marginVertical: 7
+  },
+  buttontext:{
+    color: 'white',
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  buttonnon:{
+    bottom: 0,
+    opacity: 0.7,
+    backgroundColor: 'grey',
+    paddingVertical: 10,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    marginVertical: 7
+  }
+});
+
+export default ProfileScreen;
