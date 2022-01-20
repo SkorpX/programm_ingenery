@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Icon, Image, Pressable, TouchableHighlight } from "react-native";
+import { View, Text, StyleSheet, Icon, Image, Pressable, TouchableHighlight, ScrollView } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import story1 from '../assets/storiesmoneystorage.jpeg';
 import story2 from '../assets/storiesinvestigation.jpeg';
@@ -49,7 +49,7 @@ const ProfileScreen = ({navigation}) => {
       <Text style = {styles.maintext}>Анализ финансов пока недоступен: недостаточно данных</Text>
      </View>
 
-     <Pressable style = {styles.buttonnon}>
+     <Pressable style = {styles.button}>
        <Text style = {styles.buttontext} 
               onPress={() => navigation.navigate('Third')}
               >Добавить цель</Text>
