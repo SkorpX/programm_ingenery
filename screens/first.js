@@ -62,6 +62,10 @@ const ProfileScreen = ({navigation}) => {
      <Pressable style = {styles.buttonnon}>
        <Text style = {styles.buttontext}>Добавить карту</Text>
      </Pressable>
+
+     <Pressable style = {styles.button} >
+       <Text style = {styles.buttontext} onPress={() => navigation.navigate('PlanExpense')}>Plan expense</Text>
+     </Pressable>
     </View>
   );
 };
@@ -86,7 +90,7 @@ const styles = StyleSheet.create({
   stories:{
     paddingHorizontal: 20,
     paddingVertical: 20,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   storypic:{
     width: 135, 

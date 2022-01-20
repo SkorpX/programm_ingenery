@@ -9,6 +9,7 @@ import First from './screens/first';
 import Second from './screens/second';
 import Third from './screens/third';
 import AddExpense from './screens/add_expense';
+import PlanExpense from './screens/plan_expense';
 import Story1 from './screens/story1';
 import Story2 from './screens/story2';
 import Story3 from './screens/story3';
@@ -66,6 +67,20 @@ const App = () => {
           component={AddExpense}
           options={{
             title: 'Фиксация', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
+        <Stack.Screen
+          name="PlanExpense"
+          component={PlanExpense}
+          options={{
+            title: 'PlanExpense', //Set Header Title
             headerStyle: {
               backgroundColor: '#f4511e', //Set Header color
             },
