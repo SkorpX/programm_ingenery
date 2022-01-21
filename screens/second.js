@@ -11,10 +11,9 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 
 const Addspend = ({ navigation }) => {
-
   const goToPage = (text) => {
-    navigation.navigate('AddExpense', { paramKey: text })
-  }
+    navigation.navigate('AddExpense', { paramKey: text });
+  };
 
   return (
     <View style={styles.app}>
@@ -28,7 +27,7 @@ const Addspend = ({ navigation }) => {
         />
         <Text style={styles.statusbartext}> Добавление трат</Text>
       </View>
-      
+
       <Pressable
         style={{
           width: 70,
@@ -44,7 +43,7 @@ const Addspend = ({ navigation }) => {
         onPress={() => goToPage('Еда')}>
         <Text style={styles.addbuttontext}>Еда</Text>
       </Pressable>
-      
+
       <Pressable
         style={{
           width: 130,
@@ -57,12 +56,10 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}
-        onPress={() =>
-          goToPage('Транспорт')
-        }>
+        onPress={() => goToPage('Транспорт')}>
         <Text style={styles.addbuttontext}>Транспорт</Text>
       </Pressable>
-      
+
       <Pressable
         style={{
           width: 120,
@@ -75,11 +72,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Квартира')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Квартира')}>
           Квартира
         </Text>
       </Pressable>
@@ -96,11 +89,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Красота')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Красота')}>
           Красота
         </Text>
       </Pressable>
@@ -117,11 +106,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Техника')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Техника')}>
           Техника
         </Text>
       </Pressable>
@@ -138,11 +123,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Досуг')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Досуг')}>
           Досуг
         </Text>
       </Pressable>
@@ -161,9 +142,7 @@ const Addspend = ({ navigation }) => {
         }}>
         <Text
           style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Путешествия')
-          }>
+          onPress={() => goToPage('Путешествия')}>
           Путешествия
         </Text>
       </Pressable>
@@ -180,11 +159,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Одежда')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Одежда')}>
           Одежда
         </Text>
       </Pressable>
@@ -201,11 +176,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Медицина')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Медицина')}>
           Медицина
         </Text>
       </Pressable>
@@ -222,11 +193,7 @@ const Addspend = ({ navigation }) => {
           borderWidth: 1,
           borderRadius: 10,
         }}>
-        <Text
-          style={styles.addbuttontext}
-          onPress={() =>
-            goToPage('Другое')
-          }>
+        <Text style={styles.addbuttontext} onPress={() => goToPage('Другое')}>
           Другое
         </Text>
       </Pressable>
