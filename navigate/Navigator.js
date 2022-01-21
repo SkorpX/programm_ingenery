@@ -6,9 +6,9 @@ import Second from '../screens/second';
 import Third from '../screens/third';
 
 const MyNavigator = createStackNavigator({
-     First: First,
-     Second: Second,
-     Third: Third
+     First,
+     Second,
+     Third
 });
 
 export default createAppContainer(MyNavigator);

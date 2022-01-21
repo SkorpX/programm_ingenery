@@ -52,11 +52,11 @@ const Add_expense = ({ navigation, route }) => {
         {
           id: 2,
           category: nameCategory,
-          date: date,
-          amount: amount,
-          regular: regular,
-          comment: comment,
-          source: source,
+          date,
+          amount,
+          regular,
+          comment,
+          source,
         },
         ...list,
       ];

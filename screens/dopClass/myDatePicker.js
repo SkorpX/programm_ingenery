@@ -19,7 +19,7 @@ export default class MyDatePicker extends Component {
         cancelBtnText="Cancel"
         showIcon={false}
         onDateChange={(date) => {
-          this.setState({ date: date });
+          this.setState({ date });
         }}
       />
     );

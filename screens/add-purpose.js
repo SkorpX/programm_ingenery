@@ -39,7 +39,7 @@ const Add_purpose = ({ navigation, route }) => {
 
   const addToList = () => {
     setDataArray((list) => {
-      return [{ id: 2, date: date, amount: amount, purpose: purpose }, ...list];
+      return [{ id: 2, date, amount, purpose}, ...list];
     });
   };
 
